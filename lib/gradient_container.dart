@@ -40,7 +40,7 @@ class GradientContainer extends StatelessWidget {
                 padding: const EdgeInsets.only(
                   top: 20,
                 ),
-                foregroundBuilder: Colors.lime,
+                foregroundColor: Colors.lime,
                 textStyle: const TextStyle(
                   fontSize: 30,
                 ),
