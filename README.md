@@ -1,17 +1,36 @@
-# flutter_lab4_app_barakov
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Лабораторная работа №4-5
+## ФИО, группа и дата
+Бараков Олег Юрьевич 
+ИСП-241
+10.10.2026
+## Что изучил
+1. Различать два типа виджетов
+2. Делать случайные числа
+3. Разбивать код на части
+## Скриншот финального приложения
+![](/img/step6_barakov.png)
+## Ссылка на репозиторий
+[GitHub](https://github.com/0lba/Flutter_Lab4)
+## Инструкция по запуску
+1. Клонировать репозиторий
+```
+git clone https://github.com/0lba/Flutter_Lab4
+```
+2. Запустить приложение
+```
+flutter run -d chrome
+```
+3. Нажать на кнопку 'Roll Dice'
+## Ответы на вопросы
+1. Виджеты выносят в отдельные файлы, потому что:
+- легче ориентироваться в проекте;
+- проще искать нужный виджет;
+- удобнее переиспользовать виджет в других местах.
+Если держать всё в main.dart, то проект превратится в огромный файл, где тяжело ориентироваться, а любое изменение может сломать другой виджет.
+2. BuildContext - это объект, содержащий информацию о положении виджета в дереве виджетов. Flutter передаёт его автоматически при каждой перерисовке. Метод build() принимает его как параметр, потому что без него метод работать не будет — это требование Flutter.
+3. 
+- StatelessWidget - виджет без состояния. Отрисовывается один раз и не меняется. Перерисовывается только при пересоздании родителем.
+- StatefulWidget - виджет с состоянием. Хранит изменяемые данные в объекте State и перерисовывается по вызову setState().
+Пример StatelessWidget: GradientContainer - фон с градиентом. Он статичен и не меняется после создания.
+Пример StatefulWidget: DiceRoller - при нажатии на кнопку картинка кубика меняется, поэтому виджету нужно хранить текущее состояние (activeDiceImage) и перерисовываться.
+4. Создание Random внутри функции при каждом нажатии кнопки будет создавать новый генератор случайных чисел. Это не критично, но менее эффективно.
